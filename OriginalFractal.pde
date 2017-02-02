@@ -1,5 +1,7 @@
 int op = 90;
-boolean inc = false;
+int siz = 330;
+boolean dec, inc = false;
+boolean pos = true;
 
 public void setup()
 {
@@ -8,12 +10,51 @@ public void setup()
   noFill();
 }
 
+
 public void draw()
 {
   background(10);
-  fractal(400,400,330,op);
-  if(op<140)
+  fractal(400,400,siz,op);
+  if(op<100)
+    pos = true;
+
+  if(op > 220)
+    pos=false;
+
+  if(pos)
     op++;
+
+  if(!pos)
+    op--;
+
+
+  if(dec)
+    siz-=5;
+  if(inc)
+    siz+=5;
+
+  if(siz >= 800)
+    siz=800;
+
+
+}
+
+public void keyPressed()
+{
+  if(keyCode == LEFT)
+    dec = true;
+  if(keyCode == RIGHT)
+    inc = true;
+  if(key == 'r')
+    siz = 330;
+}
+
+public void keyReleased()
+{
+  if(keyCode == LEFT)
+    dec = false;
+  if(keyCode == RIGHT)
+    inc = false;
 }
 
 
