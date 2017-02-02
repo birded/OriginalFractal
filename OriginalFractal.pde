@@ -1,5 +1,5 @@
 int op = 90;
-int siz = 330;
+int siz = 300;
 boolean dec, inc = false;
 boolean pos = true;
 
