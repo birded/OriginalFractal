@@ -46,7 +46,7 @@ public void keyPressed()
   if(keyCode == RIGHT)
     inc = true;
   if(key == 'r')
-    siz = 330;
+    siz = 300;
 }
 
 public void keyReleased()
